@@ -1,9 +1,38 @@
 /* -------------------------------------------------------------------------- */
+/*                                    color                                   */
+/* -------------------------------------------------------------------------- */
+/*
+Header = light-purple = #7477BF
+Navigation = dark-purple = #4D4C72
+*/
+
+/* -------------------------------------------------------------------------- */
 /*                                    base                                    */
 /* -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    background-color: blanchedalmond;
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    color: #777;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -22,6 +51,10 @@ body {
     grid-area: main;
 }
 
+.main {
+    display: grid;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 100%;
@@ -32,6 +65,11 @@ body {
         "main";
 }
 
+.widget-container-full,
+.widget-container-half {
+    width: 95vw;
+}
+
 @media (min-width: 768px) {
     .grid-container {
         grid-template-columns: 55px 1fr;
@@ -39,16 +77,175 @@ body {
             "header header"
             "navigation main";
     }
+
+    .main {
+        grid-template-columns: 50% 1fr;
+    }
+
+    .traffic,
+    .social {
+        grid-column: 1 / span 2;
+    }
+
+    .daily,
+    .members,
+    .message {
+        grid-column: 1 / span 1;
+    }
+
+    .mobile,
+    .activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
+
+    .widget-container-full {
+        width: 90vw;
+    }
+
+    .widget-container-half {
+        width: 45vw;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  container                                 */
+/* -------------------------------------------------------------------------- */
+
+.header {
+    background-color: #7477BF;
+    color: white;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.app-title {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation {
+    background-color: #4D4C72;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                  selector                                  */
 /* -------------------------------------------------------------------------- */
+.header-nav-item {
+    margin-left: 5px;
+}
 
-.icon {
-    width: 25px;
+.app-name {
+    font-weight: 300;
+}
+
+.icon-bell {
+    width: 24px;
+}
+
+@keyframes bell {
+    0% {
+        transform: scale(1.1) rotate(-20deg);
+    }
+
+    25% {
+        transform: scale(1.1) rotate(20deg);
+    }
+
+    75% {
+        transform: scale(1.1) rotate(-20deg);
+    }
+
+    100% {
+        transform: scale(1.1) rotate(0deg);
+    }
+}
+
+.icon-bell:hover {
+    animation: bell 1s;
+}
+
+#notification {
+    background-color: #80c98f;
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+}
+
+.pipe {
+    color: #4D4C72;
+    font-size: 24px;
+    margin-bottom: 2px;
 }
 
 .profile-image {
     border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.nav-icon {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+}
+
+#headline {
+    padding: .5em;
+    font-weight: 400;
+}
+
+.main-header-search {
+    flex-basis: 80%;
+    background-color: #FBFBFB;
+    border-bottom: 1px solid darkgrey;
+    border-left: 1px solid darkgrey;
+    padding: .5em;
+}
+
+#search {
+    border-radius: 5%;
+    float: right;
+    height: 30px;
+    border: darkgray solid 1px;
+    margin: 5px;
+    background-color: white;
+}
+
+.alert-banner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert {
+    background: #7377BF;
+    color: white;
+    margin: .5em;
+    padding: .5em;
+    border-radius: 5px;
+}
+
+.alert-banner-close {
+    cursor: pointer;
 }
