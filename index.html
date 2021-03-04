@@ -65,41 +65,43 @@
             <!-- alert from JS goes here -->
         </div>
         <!-- traffic line graph -->
-        <section class="traffic">
-            <div class="traffic-header">
-                <h3>Traffic</h3>
-                <ul class="traffic-nav">
-                    <li class="traffic-nav-link">Hourly</li>
-                    <li class="traffic-nav-link">Daily</li>
-                    <li class="traffic-nav-link">Weekly</li>
-                    <li class="traffic-nav-link">Monthly</li>
-                </ul>
-            </div>
-            <div class="widget-container-full">
-                <!-- attach line graph -->
-                <canvas id="traffic-chart"></canvas>
-            </div>
-        </section>
-        <!-- traffic bar graph -->
-        <section class="daily">
-            <h3>Daily Traffic</h3>
-            <div class="widget-container-half">
-                <!-- attach bar graph -->
-                <canvas id="daily-chart"></canvas>
-            </div>
-        </section>
-        <!-- user donut graph -->
-        <section class="mobile">
-            <h3>Mobile Users</h3>
-            <div class="widget-container-half">
-                <!-- attach donut graph -->
-                <canvas id="mobile-chart"></canvas>
-            </div>
-        </section>
+        <div class="chart-container">
+            <section class="traffic">
+                <div class="traffic-header">
+                    <h3>Traffic</h3>
+                    <ul class="traffic-nav">
+                        <li class="traffic-nav-link">Hourly</li>
+                        <li class="traffic-nav-link">Daily</li>
+                        <li class="traffic-nav-link active">Weekly</li>
+                        <li class="traffic-nav-link">Monthly</li>
+                    </ul>
+                </div>
+                <div class="widget-container-full">
+                    <!-- attach line graph -->
+                    <canvas id="traffic-chart"></canvas>
+                </div>
+            </section>
+            <!-- traffic bar graph -->
+            <section class="daily">
+                <h3>Daily Traffic</h3>
+                <div class="widget-container-half">
+                    <!-- attach bar graph -->
+                    <canvas id="daily-chart"></canvas>
+                </div>
+            </section>
+            <!-- user donut graph -->
+            <section class="mobile">
+                <h3>Mobile Users</h3>
+                <div class="widget-container-half">
+                    <!-- attach donut graph -->
+                    <canvas id="mobile-chart"></canvas>
+                </div>
+            </section>
+        </div>
         <!-- social stats -->
         <section class="social" id="social">
             <h3>Social Stats</h3>
-            <div class="social-container">
+            <div class="social-container" id="twitter">
                 <div class="circle">
                     <svg class="social-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32"

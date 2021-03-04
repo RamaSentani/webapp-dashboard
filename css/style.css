@@ -27,8 +27,14 @@ h1 {
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main h3 {
+    text-transform: uppercase;
 }
 
 ul {
@@ -149,9 +155,54 @@ ul {
     align-items: center;
 }
 
+.traffic-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chart-container,
+.social {
+    padding: .5em;
+}
+
+.traffic-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.daily,
+.mobile {
+    border-top: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+}
+
+.daily {
+    border-bottom: none;
+}
+
+canvas {
+    margin-bottom: 20px;
+}
+
+.social-container {
+    border: 1px solid darkgrey;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                  selector                                  */
 /* -------------------------------------------------------------------------- */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .header-nav-item {
     margin-left: 5px;
 }
@@ -248,4 +299,57 @@ ul {
 
 .alert-banner-close {
     cursor: pointer;
+}
+
+.traffic-nav-link {
+    padding: .5em;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.traffic-nav-link.active {
+    background-color: #80c98f;
+    color: white;
+}
+
+.traffic-nav-link:hover {
+    background-color: #80c98f;
+    color: white;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    fill: white;
+}
+
+.circle {
+    background-color: #7377BF;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+#twitter .social-icon {
+    top: 20px;
+}
+
+.social-text {
+    margin-left: 20px;
+}
+
+.social-name {
+    color: #7377BF;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.social-counter {
+    font-size: 2.2em;
+    font-weight: 300;
 }
