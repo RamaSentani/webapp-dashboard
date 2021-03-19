@@ -169,6 +169,12 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: .5em;
+}
+
+.daily h3,
+.mobile h3 {
+    padding-left: .5em;
 }
 
 .chart-container,
@@ -181,11 +187,7 @@ a {
     flex-direction: row;
 }
 
-.traffic,
-.daily,
-.mobile {
-    padding: .5em;
-}
+
 
 .daily,
 .mobile,
